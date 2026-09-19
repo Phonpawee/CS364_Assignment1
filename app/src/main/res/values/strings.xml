@@ -1,6 +1,24 @@
 <resources>
     <string name="app_name">Assignment 1</string>
 
+    <!-- activity_main.xml: static UI labels -->
+    <string name="app_header">BMI CALCULATOR</string>
+    <string name="label_height">Height</string>
+    <string name="label_weight">Weight</string>
+    <string name="label_bmi">BMI</string>
+    <string name="label_status">Status</string>
+    <string name="label_categories">BMI CATEGORIES</string>
+    <string name="hint_height">e.g., 165</string>
+    <string name="hint_weight">e.g., 50</string>
+    <string name="btn_calculate">Calculate BMI</string>
+    <string name="btn_clear">Clear</string>
+
+    <!-- activity_main.xml: BMI CATEGORIES card ranges -->
+    <string name="range_underweight">&lt; 18.5</string>
+    <string name="range_healthy">18.5 – 24.9</string>
+    <string name="range_overweight">25.0 – 29.9</string>
+    <string name="range_obesity">≥ 30.0</string>
+
     <!-- MainActivity: input validation messages -->
     <string name="error_empty_input">Please enter both height and weight</string>
     <string name="error_invalid_number">Height and weight must be valid numbers</string>

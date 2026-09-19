@@ -49,7 +49,8 @@
                             android:layout_height="20dp"
                             android:layout_gravity="center"
                             android:importantForAccessibility="no"
-                            android:src="@drawable/calculator" />
+                            android:src="@drawable/calculator"
+                            tools:ignore="VisualLintContrast" />
 
                     </FrameLayout>
 
@@ -59,7 +60,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
-                        android:text="BMI CALCULATOR"
+                        android:text="@string/app_header"
                         android:textColor="#1F2430"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -71,7 +72,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="6dp"
-                    android:text="Height"
+                    android:text="@string/label_height"
                     android:textColor="#1F2430"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -101,14 +102,14 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@null"
-                        android:hint="e.g., 165"
+                        android:hint="@string/hint_height"
                         android:importantForAutofill="no"
                         android:inputType="numberDecimal"
                         android:minHeight="48dp"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
                         android:textColor="#1F2430"
-                        android:textColorHint="#AAAAAA"
+                        android:textColorHint="@color/hint_text"
                         android:textSize="18sp"
                         tools:ignore="VisualLintTextFieldSize,VisualLintTouchTargetSize" />
                 </LinearLayout>
@@ -119,7 +120,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="6dp"
-                    android:text="Weight"
+                    android:text="@string/label_weight"
                     android:textColor="#1F2430"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -149,14 +150,14 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@null"
-                        android:hint="e.g., 50"
+                        android:hint="@string/hint_weight"
                         android:importantForAutofill="no"
                         android:inputType="numberDecimal"
                         android:minHeight="48dp"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
                         android:textColor="#1F2430"
-                        android:textColorHint="#AAAAAA"
+                        android:textColorHint="@color/hint_text"
                         android:textSize="18sp"
                         tools:ignore="VisualLintTextFieldSize,VisualLintTouchTargetSize" />
                 </LinearLayout>
@@ -167,7 +168,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="6dp"
-                    android:text="BMI"
+                    android:text="@string/label_bmi"
                     android:textColor="#1F2430"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -188,7 +189,8 @@
                         android:layout_height="24dp"
                         android:layout_marginEnd="10dp"
                         android:importantForAccessibility="no"
-                        android:src="@drawable/bmi" />
+                        android:src="@drawable/bmi"
+                        app:tint="@color/category_underweight" />
 
                     <TextView
                         android:id="@+id/input_bmi"
@@ -208,7 +210,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="6dp"
-                    android:text="Status"
+                    android:text="@string/label_status"
                     android:textColor="#1F2430"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -263,7 +265,7 @@
                         android:insetBottom="0dp"
                         android:paddingStart="4dp"
                         android:paddingEnd="4dp"
-                        android:text="Calculate BMI"
+                        android:text="@string/btn_calculate"
                         android:textAllCaps="false"
                         android:textColor="#FFFFFF"
                         android:textSize="14sp"
@@ -282,13 +284,13 @@
                         android:insetBottom="0dp"
                         android:paddingStart="4dp"
                         android:paddingEnd="4dp"
-                        android:text="Clear"
+                        android:text="@string/btn_clear"
                         android:textAllCaps="false"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/btn_clear_text"
                         android:textSize="14sp"
                         android:textStyle="bold"
                         app:cornerRadius="16dp"
-                        tools:ignore="VisualLintButtonSize,VisualLintContrast" />
+                        tools:ignore="VisualLintButtonSize" />
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -316,7 +318,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:gravity="center"
-                    android:text="BMI CATEGORIES"
+                    android:text="@string/label_categories"
                     android:textColor="#1F2430"
                     android:textSize="14sp"
 
@@ -346,23 +348,23 @@
                             android:layout_marginBottom="4dp"
                             android:src="@drawable/ic_person"
                             android:importantForAccessibility="no"
-                            app:tint="#4C7DF0" />
+                            app:tint="@color/category_underweight" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Underweight"
-                            android:textColor="#4C7DF0"
-                            android:textSize="9sp"
+                            android:text="@string/category_underweight"
+                            android:textColor="@color/category_underweight"
+                            android:textSize="11sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:hyphenationFrequency="full"
-                            android:text="&lt; 18.5"
-                            android:textColor="#8A8F98"
-                            android:textSize="9sp" />
+                            android:text="@string/range_underweight"
+                            android:textColor="@color/text_muted"
+                            android:textSize="11sp" />
                     </LinearLayout>
 
                     <!--  Healthy Weight  -->
@@ -382,23 +384,23 @@
                             android:layout_marginBottom="4dp"
                             android:src="@drawable/ic_person"
                             android:importantForAccessibility="no"
-                            app:tint="#34A853" />
+                            app:tint="@color/category_healthy" />
 
                         <TextView
                             android:layout_width="39dp"
                             android:layout_height="wrap_content"
-                            android:text="Healthy Weight"
-                            android:textColor="#34A853"
-                            android:textSize="9sp"
+                            android:text="@string/category_healthy"
+                            android:textColor="@color/category_healthy"
+                            android:textSize="11sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:hyphenationFrequency="full"
-                            android:text="18.5 – 24.9"
-                            android:textColor="#8A8F98"
-                            android:textSize="9sp" />
+                            android:text="@string/range_healthy"
+                            android:textColor="@color/text_muted"
+                            android:textSize="11sp" />
                     </LinearLayout>
 
                     <!--  Overweight  -->
@@ -418,23 +420,23 @@
                             android:layout_marginBottom="4dp"
                             android:importantForAccessibility="no"
                             android:src="@drawable/ic_person"
-                            app:tint="#F5A623" />
+                            app:tint="@color/category_overweight" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Overweight"
-                            android:textColor="#F5A623"
-                            android:textSize="9sp"
+                            android:text="@string/category_overweight"
+                            android:textColor="@color/category_overweight"
+                            android:textSize="11sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:hyphenationFrequency="full"
-                            android:text="25.0 – 29.9"
-                            android:textColor="#8A8F98"
-                            android:textSize="9sp" />
+                            android:text="@string/range_overweight"
+                            android:textColor="@color/text_muted"
+                            android:textSize="11sp" />
                     </LinearLayout>
 
                     <!--  Obesity  -->
@@ -453,23 +455,23 @@
                             android:layout_marginBottom="4dp"
                             android:src="@drawable/ic_person"
                             android:importantForAccessibility="no"
-                            app:tint="#EA4335" />
+                            app:tint="@color/category_obesity" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Obesity"
-                            android:textColor="#EA4335"
-                            android:textSize="9sp"
+                            android:text="@string/category_obesity"
+                            android:textColor="@color/category_obesity"
+                            android:textSize="11sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:hyphenationFrequency="full"
-                            android:text="≥ 30.0"
-                            android:textColor="#8A8F98"
-                            android:textSize="9sp" />
+                            android:text="@string/range_obesity"
+                            android:textColor="@color/text_muted"
+                            android:textSize="11sp" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
