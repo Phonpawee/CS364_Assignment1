@@ -1,5 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- MainActivity: BMI category colors (matches BMI CATEGORIES card colors) -->
+    <color name="category_underweight">#4C7DF0</color>
+    <color name="category_healthy">#34A853</color>
+    <color name="category_overweight">#F5A623</color>
+    <color name="category_obesity">#EA4335</color>
 </resources>

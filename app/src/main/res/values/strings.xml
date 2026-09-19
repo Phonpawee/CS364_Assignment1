@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Assignment 1</string>
+
+    <!-- MainActivity: input validation messages -->
+    <string name="error_empty_input">Please enter both height and weight</string>
+    <string name="error_invalid_number">Height and weight must be valid numbers</string>
+    <string name="error_non_positive">Height and weight must be greater than 0</string>
+
+    <!-- MainActivity: BMI category labels (must match the labels used in the BMI CATEGORIES card) -->
+    <string name="category_underweight">Underweight</string>
+    <string name="category_healthy">Healthy Weight</string>
+    <string name="category_overweight">Overweight</string>
+    <string name="category_obesity">Obesity</string>
 </resources>
