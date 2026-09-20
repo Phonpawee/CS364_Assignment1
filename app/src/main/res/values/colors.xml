@@ -7,7 +7,7 @@
          Darkened from the original pastel shades (#4C7DF0/#34A853/#F5A623/#EA4335) so text
          and icon tints pass the 4.5:1 contrast ratio against their light card backgrounds. -->
     <color name="category_underweight">#1967D2</color>
-    <color name="category_healthy">#188038</color>
+    <color name="category_healthy">#147A32</color>
     <color name="category_overweight">#A15C00</color>
     <color name="category_obesity">#C5221F</color>
 

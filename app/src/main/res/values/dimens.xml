@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="text_header">20sp</dimen>
+    <dimen name="text_label">18sp</dimen>
+    <dimen name="text_input">18sp</dimen>
+    <dimen name="text_result">16sp</dimen>
+    <dimen name="text_button">14sp</dimen>
+    <dimen name="text_category">11sp</dimen>
+    <dimen name="text_category_title">14sp</dimen>
+
+</resources>
