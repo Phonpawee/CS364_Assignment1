@@ -1,12 +1,16 @@
 package com.example.assignment1;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.text.InputFilter;
+import android.text.Spanned;
 import android.text.TextUtils;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
@@ -16,6 +20,8 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.button.MaterialButton;
 
 import java.text.DecimalFormat;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,6 +54,19 @@ public class MainActivity extends AppCompatActivity {
         btnClear.setOnClickListener(v -> clearFields());
     }
 
+    /**
+     * AndroidManifest.xml declares android:configChanges="fontScale" for this
+     * activity, so when the user changes the device's font size while the app
+     * is running, Android calls this method instead of destroying and
+     * recreating the whole Activity. We re-create it ourselves so every
+     * TextView/EditText re-inflates with the new font scale applied.
+     */
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        recreate();
+    }
+
     private void bindViews() {
         inputHeight = findViewById(R.id.input_height);
         inputWeight = findViewById(R.id.input_weight);
@@ -55,6 +74,9 @@ public class MainActivity extends AppCompatActivity {
         inputStatus = findViewById(R.id.input_status);
         btnCalculate = findViewById(R.id.calculate2);
         btnClear = findViewById(R.id.clear);
+
+        inputHeight.setFilters(new InputFilter[]{new DecimalDigitsInputFilter(8, 2)});
+        inputWeight.setFilters(new InputFilter[]{new DecimalDigitsInputFilter(8, 2)});
     }
 
     /**
@@ -130,5 +152,27 @@ public class MainActivity extends AppCompatActivity {
         inputBmi.setText("");
         inputStatus.setText("");
         inputStatus.setTextColor(ContextCompat.getColor(this, R.color.black));
+    }
+}
+
+/**
+ * Limits an EditText to a maximum number of total digits and digits after
+ * the decimal point (e.g. 8 total digits, 2 after the decimal point).
+ */
+class DecimalDigitsInputFilter implements InputFilter {
+    private final Pattern mPattern;
+
+    DecimalDigitsInputFilter(int digits, int digitsAfterZero) {
+        mPattern = Pattern.compile("[0-9]{0," + (digits - 1) + "}+((\\.[0-9]{0,"
+                + (digitsAfterZero - 1) + "})?)|(\\.)?");
+    }
+
+    @Override
+    public CharSequence filter(@NonNull CharSequence source, int start, int end,
+                               @NonNull Spanned dest, int dstart, int dend) {
+        Matcher matcher = mPattern.matcher(dest);
+        if (!matcher.matches())
+            return "";
+        return null;
     }
 }

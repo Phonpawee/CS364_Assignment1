@@ -3,6 +3,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <!-- activity_main.xml: primary text color + button backgrounds (replaces hard-coded hex) -->
+    <color name="text_primary">#1F2430</color>
+    <color name="btn_calculate_bg">#4C6FF5</color>
+    <color name="btn_clear_bg">#C6CACA</color>
+
     <!-- MainActivity + activity_main.xml: BMI category colors (matches BMI CATEGORIES card).
          Darkened from the original pastel shades (#4C7DF0/#34A853/#F5A623/#EA4335) so text
          and icon tints pass the 4.5:1 contrast ratio against their light card backgrounds. -->
